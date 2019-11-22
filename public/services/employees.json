@@ -1,0 +1,32 @@
+[
+  {
+    "name": "John Doe",
+    "age": 28,
+    "city": "San Francisco, Estados Unidos"
+  },
+  {
+    "name": "Linus Torvals",
+    "age": 49,
+    "city": "Helsinki, Finland"
+  },
+  {
+    "name": "Richard Stallman",
+    "age": 66,
+    "city": "Nueva York, Estados Unidos"
+  },
+  {
+    "name": "John Carmack",
+    "age": 49,
+    "city": "Kansas, Estados Unidos"
+  },
+  {
+    "name": "Shigeru Miyamoto",
+    "age": 67,
+    "city": "Kioto, Japón"
+  },
+  {
+    "name": "Francisco Barea",
+    "age": 29,
+    "city": "Madrid, España"
+  }
+]
