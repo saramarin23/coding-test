@@ -1,0 +1,12 @@
+.App-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: calc(10px + 2vmin);
+  /* color: #f44336; */
+  background-color: white;
+}
+
+.logo {
+  width: 20%;
+}
