@@ -1,27 +1,30 @@
-// ESTO VA EN OTRA CARPETA:
-//Let's change the app into a web server:
-// const http = require("http"); //imports web server module
-
-// const app = http.createServer((req, res) => {
-//   res.writeHead(200, { "Content-Type": "text/plain" });
-//   res.end("Hello world");
-// }); //CreateServer method of the http module to create a new web server. An event handler is registered to the server, that is called everytime an HTTP req is made to the server's address.
-
-// const PORT = 5000;
-// app.listen(PORT);
-// console.log(`Server running on port ${PORT}`);
-
 //Importamos dependencias
 const express = require("express");
 const dotenv = require("dotenv");
-// const mongoose = require("mongoose");
+const mongoose = require("mongoose");
+const path = require("path");
 
-dotenv.config();
+// dotenv.config();
 const app = express();
 
+require("dotenv").config({ path: path.resolve(__dirname, "./.env") });
+
 //Conectamos mongoose con nuestra base de datos
-// mongoose.connect({ useNewUrlParser: true, useUnifiedTopology: true }),
-//   () => console.log("connected to db!!");
+mongoose
+  .connect(process.env.MONGO_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  })
+  // , () => console.log("connected to db!!"
+
+  .then(x => {
+    console.log(
+      `Connected to Mongo! Database name: "${x.connections[0].name}"`
+    );
+  })
+  .catch(err => {
+    console.error("Error connecting to mongo", err);
+  });
 
 const index = require("./routes/index");
 app.use("/", index);

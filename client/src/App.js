@@ -1,28 +1,16 @@
 import React from "react";
 import "./App.css";
 import Header from "./components/header/Header";
+import List from "./components/employees-list/List";
 
 // import getDataFromServer from "./service/data";
 // const URL = "./service/employees.json";
-
-const mockPeople = [
-  {
-    name: "John Doe",
-    age: 28,
-    bio: "blablabla"
-  },
-  {
-    name: "Linus Torvals",
-    age: 49,
-    bio: "bla bla bla"
-  }
-];
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      mockPeople
+      // mockPeople
     };
   }
 
@@ -45,11 +33,10 @@ class App extends React.Component {
   // }
 
   render() {
-    console.log(this.state);
     return (
       <div className="App">
         <Header />
-        <main></main>
+        <List />
       </div>
     );
   }
