@@ -8,11 +8,13 @@ import Header from "./components/header/Header";
 const mockPeople = [
   {
     name: "John Doe",
-    age: 28
+    age: 28,
+    bio: "blablabla"
   },
   {
     name: "Linus Torvals",
-    age: 49
+    age: 49,
+    bio: "bla bla bla"
   }
 ];
 
