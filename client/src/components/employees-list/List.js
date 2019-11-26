@@ -25,9 +25,7 @@ class List extends React.Component {
   }
 
   componentDidMount() {
-    getEmployees().then(data => {
-      console.log(data);
-    });
+    getEmployees().then(console.log());
   }
 
   render() {
