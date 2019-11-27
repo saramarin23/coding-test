@@ -1,14 +1,15 @@
 import React from "react";
 import Header from "../../components/header/Header";
+import Filter from "../../components/filter/Filter";
 import List from "../../components/employees-list/List";
 
 const Home = props => {
-  // console.log(props);
-  const { employees } = props;
+  const { employees, searchEmployee, query } = props;
   return (
     <React.Fragment>
       <Header />
-      <List employees={employees} />
+      <Filter searchEmployee={searchEmployee} />
+      <List employees={employees} query={query} />
     </React.Fragment>
   );
 };

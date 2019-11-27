@@ -9,8 +9,10 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      employees: []
+      employees: [],
+      query: ""
     };
+    this.searchEmployee = this.searchEmployee.bind(this);
   }
 
   componentDidMount() {
@@ -26,8 +28,14 @@ class App extends React.Component {
     });
   }
 
+  searchEmployee(e) {
+    const value = e.currentTarget.value;
+    this.setState({ query: value });
+  }
+
   render() {
-    const { employees } = this.state;
+    const { employees, query } = this.state;
+    console.log(query);
     return (
       <div className="App">
         <Switch>
@@ -35,7 +43,13 @@ class App extends React.Component {
             exact
             path="/"
             render={() => {
-              return <Home employees={employees} />;
+              return (
+                <Home
+                  employees={employees}
+                  query={query}
+                  searchEmployee={this.searchEmployee}
+                />
+              );
             }}
           />
           <Route
