@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../../components/header/Header";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import "./ProfilePage.scss";
 
@@ -28,19 +28,22 @@ const ProfilePage = props => {
             <p className="employee__bio">{bio}</p>
           </div>
           <button className="employee__details-button">
-            <a href="/">Close</a>
+            <Link to="/">Close</Link>
           </button>
         </div>
       </React.Fragment>
     );
   } else {
     return (
-      <div>
+      <React.Fragment>
         <Header />
         <div className="employee__details">
           <p>Ese empleado no existe</p>
+          <button className="employee__details-button">
+            <Link to="/">Close</Link>
+          </button>
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 };

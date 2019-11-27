@@ -35,7 +35,6 @@ class App extends React.Component {
 
   render() {
     const { employees, query } = this.state;
-    console.log(query);
     return (
       <div className="App">
         <Switch>
