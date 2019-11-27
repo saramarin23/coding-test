@@ -1,21 +1,31 @@
 .employee_card {
-    width: 200px;
+    width: 250px;
+    height: 200px;
     margin: 20px;
     padding: 20px;
     display: flex;
+    flex-direction: column;
     background: white;
     cursor: pointer;
 
+    &-basicinfo {
+        display: flex;
+    }
+
     &-photo {
-        height: 50px;
-        width: 50px;
-        margin-top: 20px;
+        height: 75px;
+        width: 75px;
+        left: 20%;
         border-radius: 50%;
     }
 
     &-name {
+        width: 80%;
+        height: 50%;
         margin-left: 20px;
+        right: 70%;
         overflow: hidden;
+        word-wrap: break-word;
         text-overflow: ellipsis;
         font-weight: bold;
     }

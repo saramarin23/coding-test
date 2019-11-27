@@ -1,10 +1,13 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: sans-serif;
 }
 
 .App {
-  /* text-align: center; */
   background-color: #f44336;
   min-height: 100vh;
 }
