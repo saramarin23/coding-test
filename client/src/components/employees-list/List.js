@@ -1,45 +1,40 @@
 import React from "react";
-import getEmployees from "../../service/employees";
+import fetchEmployees from "../../service/employees";
 
 import "./List.css";
-
-// const mockPeople = [
-//   {
-//     name: "John Doe",
-//     age: 28,
-//     bio: "blablabla"
-//   },
-//   {
-//     name: "Linus Torvals",
-//     age: 49,
-//     bio: "bla bla bla"
-//   }
-// ];
 
 class List extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // mockPeople
+      employees: []
     };
   }
 
   componentDidMount() {
-    getEmployees().then(console.log());
+    this.getEmployees();
+  }
+
+  getEmployees() {
+    fetchEmployees().then(employees => {
+      this.setState({
+        employees: employees
+      });
+    });
   }
 
   render() {
-    // console.log(this.state);
+    console.log(this.state);
     return (
       <ul>
-        {/* {this.state.mockPeople.map((character, index) => {
+        {this.state.employees.map((employee, index) => {
           return (
             <div key={index}>
-              <p>{character.name}</p>
-              <span>{character.age}</span>
+              <p>{employee.name}</p>
+              <span>{employee.age}</span>
             </div>
           );
-        })} */}
+        })}
       </ul>
     );
   }
