@@ -1,0 +1,23 @@
+.employee_card {
+    width: 200px;
+    margin: 20px;
+    padding: 20px;
+    display: flex;
+    background: white;
+    cursor: pointer;
+
+    &-photo {
+        height: 50px;
+        width: 50px;
+        margin-top: 20px;
+        border-radius: 50%;
+    }
+
+    &-name {
+        margin-left: 20px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-weight: bold;
+    }
+
+}

@@ -1,7 +1,8 @@
 import React from "react";
 import fetchEmployees from "../../service/employees";
+import Card from "../employee-card/Card";
 
-import "./List.css";
+import "./List.scss";
 
 class List extends React.Component {
   constructor(props) {
@@ -18,22 +19,17 @@ class List extends React.Component {
   getEmployees() {
     fetchEmployees().then(employees => {
       this.setState({
+        ...this.state,
         employees: employees
       });
     });
   }
 
   render() {
-    console.log(this.state);
     return (
-      <ul>
+      <ul className="employees-list">
         {this.state.employees.map((employee, index) => {
-          return (
-            <div key={index}>
-              <p>{employee.name}</p>
-              <span>{employee.age}</span>
-            </div>
-          );
+          return <Card key={index} employee={employee} />;
         })}
       </ul>
     );
