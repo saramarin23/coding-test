@@ -1,6 +1,7 @@
 import React from "react";
-import Header from "./components/header/Header";
-import List from "./components/employees-list/List";
+import Home from "./pages/homepage/Home";
+import ProfilePage from "./pages/profile-page/ProfilePage";
+import { Switch, Route } from "react-router-dom";
 import "./App.scss";
 
 class App extends React.Component {
@@ -12,8 +13,21 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Header />
-        <List />
+        <Switch>
+          <Route
+            exact
+            path="/"
+            render={() => {
+              return <Home />;
+            }}
+          />
+          <Route
+            path="/employee/:id"
+            render={() => {
+              return <ProfilePage />;
+            }}
+          />
+        </Switch>
       </div>
     );
   }

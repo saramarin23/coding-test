@@ -1,6 +1,7 @@
 import React from "react";
 import fetchEmployees from "../../service/employees";
 import Card from "../employee-card/Card";
+import { Link } from "react-router-dom";
 
 import "./List.scss";
 
@@ -29,7 +30,15 @@ class List extends React.Component {
     return (
       <ul className="employees-list">
         {this.state.employees.map((employee, index) => {
-          return <Card key={index} employee={employee} />;
+          return (
+            <Link
+              key={index}
+              to={`/employee/${employee.id}`}
+              className="employee__link"
+            >
+              <Card key={index} employee={employee} />
+            </Link>
+          );
         })}
       </ul>
     );
