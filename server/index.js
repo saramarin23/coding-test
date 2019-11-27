@@ -2,6 +2,7 @@
 const express = require("express");
 const path = require("path");
 const bodyParser = require("body-parser");
+const mcache = require("memory-cache");
 
 require("dotenv").config({ path: path.resolve(__dirname, "./.env") });
 
@@ -10,6 +11,24 @@ const app = express();
 //config middlewares
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
+var cache = duration => {
+  return (req, res, next) => {
+    let key = "__express__" + req.originalUrl || req.urlencoded;
+    let cachedBody = mcache.get(key);
+    if (cachedBody) {
+      res.send(cachedBody);
+      return;
+    } else {
+      res.sendResponse = res.send;
+      res.send = body => {
+        mcache.put(key, body, duration * 1000);
+        res.sendResponse(body);
+      };
+      next();
+    }
+  };
+};
 
 // Configurar cabeceras y cors
 app.use((req, res, next) => {
