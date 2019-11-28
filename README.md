@@ -1,6 +1,6 @@
 # Mediasmart's coding test
 
-Coding test made for mediasmart and has two parts:
+Coding test made for mediasmart.
 
 - Back end:
 
@@ -14,7 +14,7 @@ Coding test made for mediasmart and has two parts:
   - It is adapted to all devices (responsive web).
   - You can filter the employee you are looking for and it will be displayed on the homepage.
 
-This project is made with React and Node. Interface development is easier using Sass preprocessor and structuring classes with BEM methodology.
+This project is made with React and Node. For its styles it's made with Sass preprocessor and structuring classes with BEM methodology.
 
 ## How to run this app
 
