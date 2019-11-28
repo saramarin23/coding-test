@@ -2,7 +2,14 @@ import React from "react";
 import Header from "../../components/header/Header";
 import { Link } from "react-router-dom";
 
+import Logo from "../../assets/images/logo.png";
+
 import "./ProfilePage.scss";
+
+const addDefaultSrc = e => {
+  e.target.src = Logo;
+  e.target.alt = "Imagen no disponible";
+};
 
 const ProfilePage = props => {
   const { routerProps, employees } = props;
@@ -15,7 +22,12 @@ const ProfilePage = props => {
         <Header />
         <div className="employee__details">
           <div className="employee__details--basicdata">
-            <img className="employee__details--img" src={image} alt={name} />
+            <img
+              className="employee__details--img"
+              src={image}
+              alt={name}
+              onError={addDefaultSrc}
+            />
             <div className="employee__details--text">
               <h2>Name: {name}</h2>
               <p className="employee__age">Age: {age}</p>
