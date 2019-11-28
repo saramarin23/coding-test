@@ -5,17 +5,17 @@ import "./Card.scss";
 const Card = props => {
   const { employee } = props;
   return (
-    <li key={employee.id} className="employee_card">
-      <div className="employee_card-basicinfo">
+    <li key={employee.id} className="employee__card">
+      <div className="employee__card--basicinfo">
         <img
           src={employee.image}
           alt={employee.name}
-          className="employee_card-photo"
+          className="employee__card--photo"
         />
-        <p className="employee_card-name">{employee.name}</p>
+        <p className="employee__card--name">{employee.name}</p>
       </div>
       <div>
-        <span className="employee_card-age">{employee.age} years old</span>
+        <span className="employee__card--age">{employee.age} years old</span>
       </div>
     </li>
   );

@@ -11,23 +11,44 @@
     padding: 20px;
     margin: 50px auto;
     background-color: white;
+
+    &--basicdata {
+        display: flex;
+        margin-bottom: 20px;
+    }
+
+    &--img {
+        width: 30%;
+        border-radius: 50%;
+        max-height: 100px;
+        max-width: 100px;
+    }
+
+    &--text {
+        display: flex;
+        flex-direction: column;
+        margin: 20px;
+    }
+
+    &--button {
+        margin-top: 20px;
+        font-size: 14px;
+        width: 20%;
+        align-self: flex-end;
+        border: 1px solid #f44336;
+
+        &:focus {
+            display: none;
+        }
+
+        &:hover {
+            cursor: pointer;
+            background-color: rgb(233, 226, 221);
+        }
+    }
 }
 
-.employee__details-basicdata {
-    display: flex;
-    margin-bottom: 20px;
-}
 
-.employee__details-img {
-    width: 30%;
-    border-radius: 50%;
-}
-
-.employee-details-text {
-    display: flex;
-    flex-direction: column;
-    margin: 20px;
-}
 
 .employee__age {
     margin-top: 5px;
@@ -36,21 +57,4 @@
 .employee__bio {
     height: 200px;
     overflow-y: scroll;
-}
-
-.employee__details-button {
-    margin-top: 20px;
-    font-size: 14px;
-    width: 20%;
-    align-self: flex-end;
-    border: 1px solid #f44336;
-
-    &:focus {
-        display: none;
-    }
-
-    &:hover {
-        cursor: pointer;
-        background-color: rgb(233, 226, 221);
-    }
 }

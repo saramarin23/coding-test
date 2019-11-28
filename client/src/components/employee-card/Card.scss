@@ -1,4 +1,4 @@
-.employee_card {
+.employee__card {
     width: 250px;
     height: 200px;
     margin: 20px;
@@ -8,19 +8,19 @@
     background: white;
     cursor: pointer;
 
-    &-basicinfo {
+    &--basicinfo {
         display: flex;
         height: 100px;
     }
 
-    &-photo {
+    &--photo {
         height: 75px;
         width: 75px;
         left: 20%;
         border-radius: 50%;
     }
 
-    &-name {
+    &--name {
         width: 80%;
         height: 50%;
         margin-left: 20px;

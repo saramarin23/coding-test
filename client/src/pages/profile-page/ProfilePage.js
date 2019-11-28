@@ -14,11 +14,9 @@ const ProfilePage = props => {
       <React.Fragment>
         <Header />
         <div className="employee__details">
-          <div className="employee__details-basicdata">
-            {/* <div className="employee-img_container"> */}
-            <img className="employee__details-img" src={image} alt={name} />
-            {/* </div> */}
-            <div className="employee-details-text">
+          <div className="employee__details--basicdata">
+            <img className="employee__details--img" src={image} alt={name} />
+            <div className="employee__details--text">
               <h2>Name: {name}</h2>
               <p className="employee__age">Age: {age}</p>
             </div>
@@ -27,7 +25,7 @@ const ProfilePage = props => {
             <p>Bio:</p>
             <p className="employee__bio">{bio}</p>
           </div>
-          <button className="employee__details-button">
+          <button className="employee__details--button">
             <Link to="/">Close</Link>
           </button>
         </div>
@@ -39,7 +37,7 @@ const ProfilePage = props => {
         <Header />
         <div className="employee__details">
           <p>Ese empleado no existe</p>
-          <button className="employee__details-button">
+          <button className="employee__details--button">
             <Link to="/">Close</Link>
           </button>
         </div>

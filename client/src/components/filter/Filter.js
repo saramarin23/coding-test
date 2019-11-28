@@ -5,7 +5,7 @@ import "./Filter.scss";
 const Filter = props => {
   const { searchEmployee } = props;
   return (
-    <div className="input-container">
+    <div className="input__container">
       <input
         className="input"
         type="search"

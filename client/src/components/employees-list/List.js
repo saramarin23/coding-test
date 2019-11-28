@@ -1,5 +1,4 @@
 import React from "react";
-// import fetchEmployees from "../../service/employees";
 import Card from "../employee-card/Card";
 
 import { Link } from "react-router-dom";
@@ -9,7 +8,7 @@ import "./List.scss";
 const List = props => {
   const { employees, query } = props;
   return (
-    <ul className="employees-list">
+    <ul className="employees__list">
       {employees
         .filter(myEmployee =>
           myEmployee.name.toLowerCase().includes(query.toLowerCase())
